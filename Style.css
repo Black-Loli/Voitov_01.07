@@ -1,0 +1,38 @@
+body{
+    background: #FDEDED;
+    font-family: 'Caveat', cursive;
+}
+
+button{
+    border-radius: 10px;
+    border: 1px solid #111111;
+    box-shadow: 2px 2px 10px 4px rgba(136, 136, 136, 0.5);
+    background: #FEA3B6;
+    padding: 10px;
+    margin: 20px 10px;
+}
+
+button:hover{
+    background: #e08ea0;
+}
+
+button:active{
+    background: #481F72;
+}
+
+p{
+    font-size: 25px;
+    margin: 5px 5px;
+}
+
+div.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пёси</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div>
+        <p> Номер </p>
+        <p class="number-select">6</p>
+    </div>
+
+    <div>
+        <p> Порода: </p>
+        <p class="breed-select">Акита-Ину</p>
+    </div>
+
+    <div>
+        <p> Имя: </p>
+        <p class="nickname-select">Наоко</p>
+    </div>
+
+    <div>
+        <p> Возраст: </p>
+        <p class="age-select">6</p>
+    </div>
+
+    <div>
+        <button class="btn-down"> Прошлый пёсь </button>
+        <button class="btn-up"> Следующий пёсь </button>
+    </div>
+</div>
+</body>
+<script src="jquery.min.js"></script>
+<script>
+    var number = ["1", "2", "3", "4", "5", "6"];
+    var breed = ["Бигль", "Овчарка", "Шиба-Ину", "Лабрадор", "Хаски", "Акита-Ину"];
+    var nickname = ["Рой", "Виски", "Фая", "Тор", "Юта", "Наоко"];
+    var age = ["12", "5", "4", "2", "3", "6"];
+
+    var i = 0,
+        n = number.length;
+
+    $(".btn-up").data('dir', 1);
+    $(".btn-down").data('dir', -1);
+
+    $(".btn-up, .btn-down").on('click', function () {
+
+        i = (i + $(this).data('dir') + n) % n;
+
+        $(".number-select").hide().html(number[i]).fadeIn(300);
+        $(".breed-select").hide().html(breed[i]).fadeIn(300);
+        $(".nickname-select").hide().html(nickname[i]).fadeIn(300);
+        $(".age-select").hide().html(age[i]).fadeIn(300);
+    });
+</script>
+</html>
